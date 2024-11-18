@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//1
+    // function sortNums(arrayOfNums, direction) {
+    //     if (direction === 'ascending') return arrayOfNums.sort((a, b) => a - b);
+    //     if (direction === 'descending') return arrayOfNums.sort((a, b) => b - a);
+    // }
+    // console.log(sortNums([11,21,3], 'ascending'))
+
+//2
+    function sortNums2(direction) {
+        const array = [11,21,3];
+        if (direction === 'ascending') return array.sort((a, b) => a - b);
+        if (direction === 'descending') return array.sort((a, b) => b - a);
+//3
+        // switch (direction) {
+        //     case 'ascending':
+        //         array.sort((a, b) => a - b);
+        //         break;
+        //     case 'descending':
+        //         array.sort((a, b) => b - a);
+        //         break;
+        // }
+        // return array;
+    }
+
+    console.log(sortNums2('descending'));
+//4
+    // function sortList() {
+    //     const direction = prompt("Enter a direction ascending or descending");
+    //     const arrayLength = +prompt("Enter an array length");
+    //
+    //     const array = [];
+    //     for (let i = 0; i < arrayLength; i++) {
+    //         const arrayElement = +prompt("Enter an array item");
+    //         array.push(arrayElement);
+    //     }
+    //     if (direction === 'ascending') return array.sort((a, b) => a - b);
+    //     if (direction === 'descending') return array.sort((a, b) => b - a);
+    // }
+    //
+    // console.log(sortList());
+</script>
+</body>
+</html>
