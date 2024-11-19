@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    Array.prototype.myForEach = function (callback) {
+        for (let i = 0; i < this.length; i++) {
+            callback(this[i]);
+        }
+    };
+
+    [1, 2, 3, 4, 32, 432, 4234, 213].myForEach((value) => console.log(value));
+
+    Array.prototype.myFilter = function (callback) {
+        const result = [];
+        for (let i = 0; i < this.length; i++) {
+            if (callback(this[i])) {
+                result.push(this[i]);
+            }
+        }
+        return result;
+    };
+
+    const vagGroup = [
+        {name: 'Volkswagen', model: 'Jetta', year: 2015, inVagGroup: true},
+        {name: 'Audi', model: 'A7', year: 2018, inVagGroup: true},
+        {name: 'BMW', model: 'X5', year: 2003, inVagGroup: false},
+        {name: 'Opel', model: 'Vivaro', year: 2012, inVagGroup: false},
+        {name: 'Porsche', model: 'Panamera', year: 2021, inVagGroup: true},
+        {name: 'Mini', model: 'Cooper', year: 2020, inVagGroup: false},
+        {name: 'Lamborghini', model: 'Urus', year: 2024, inVagGroup: true},
+        {name: 'Жигулі))', model: 'які дожили', year: 1963, inVagGroup: false}
+    ];
+
+    const vagGroupCars = vagGroup.myFilter((value) => value.inVagGroup);
+    console.log(vagGroupCars)
+
+</script>
+<body>
+
+</body>
+</html>

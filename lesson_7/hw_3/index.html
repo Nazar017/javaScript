@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    function Uzer(id, name, surname, email, phone) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    let uzers = [
+        new Uzer(1, 'Nazar', 'Natrbin', 'nazarnatbin@gmail.com', '+3806363636363'),
+        new Uzer(22, 'Gregor', 'Serentino', 'gregor@gmail.com', '+3806700700700'),
+        new Uzer(17, 'Andrew', 'Hritsay', 'andrew@gmail.com', '+3806806806800'),
+        new Uzer(2, 'Ira', 'Hrytsak', 'ira@gmail.com', '+3807575171717'),
+        new Uzer(3, 'Vika', 'Prac', 'vika@gmail.com', '+3809300300300'),
+        new Uzer(9, 'Roha', 'Valko', 'roha@gmail.com', '+380977777007'),
+        new Uzer(7, 'Alex', 'Ponomar', 'alex@gmail.com', '+3809512345678'),
+        new Uzer(10, 'Petro', 'Ivanchenko', 'petro@gmail.com', '+3809898765432'),
+        new Uzer(11, 'Ivan', 'Petrenko', 'ivan@gmail.com', '+3806717171717'),
+        new Uzer(15, 'Vania', 'Gavruk', 'Vania@gmail.com', '+380900000000'),
+    ];
+
+    uzers.sort((a,b) => a.id - b.id);
+    console.log(uzers);
+
+
+</script>
+<body>
+
+</body>
+</html>

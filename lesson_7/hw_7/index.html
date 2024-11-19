@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    class Car {
+        constructor(manufacturer, model, year, maxSpeed, engineVolume) {
+            this.manufacturer = manufacturer;
+            this.model = model;
+            this.year = year;
+            this.maxSpeed = maxSpeed;
+            this.engineVolume = engineVolume;
+        }
+
+        drive() {
+            console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину`);
+        }
+
+        info() {
+            console.log(`Виробник - ${this.manufacturer}`);
+            console.log(`Модель - ${this.model}`);
+            console.log(`Рік випуску - ${this.year}`);
+            console.log(`Максимальна швидкість - ${this.maxSpeed} км/год`);
+            console.log(`Об'єм двигуна - ${this.engineVolume} л`);
+            if (this.driver) {
+                console.log(this.driver);
+
+                // let driverInfo = 'Driver: ';  // щоб читабельно вивести інформацію через info
+                // for (const driver in this.driver) {
+                //     driverInfo += `${driver} - ${this.driver[driver]} `;
+                // }
+                // console.log(driverInfo);
+            }
+        }
+
+        increaseMaxSpeed(speedToAdd) {
+            this.maxSpeed += speedToAdd;
+        };
+
+        changeYear(newValue) {
+            this.year = newValue;
+        }
+
+        addDriver(driver) {
+            this.driver = driver;
+        };
+    }
+
+    const myCar = new Car('Mercedes-Benz', 'CLS', 2014, 235, 6.3);
+
+    myCar.info()
+    myCar.drive()
+    myCar.increaseMaxSpeed(100);
+    myCar.changeYear(2015);
+    myCar.addDriver({name: 'Andrii', age: 23, married: false});
+    myCar.info();
+
+</script>
+<body>
+
+</body>
+</html>

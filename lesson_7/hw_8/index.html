@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    class Cinderella {
+        constructor(name, age, footSize) {
+            this.name = name;
+            this.age = age;
+            this.footSize = footSize;
+        }
+    }
+
+    class Prince {
+        constructor(name, age, shoe) {
+            this.name = name;
+            this.age = age;
+            this.shoe = shoe;
+        }
+
+        findCinderella(cinderellaArray) {
+            const cinderella = cinderellaArray.find(cinderella => cinderella.footSize === this.shoe);
+            this.princeCinderella = cinderella; // якщо захочемо добавити інформацію в info
+            return cinderella ? cinderella : 'Попелюшка не знайдена';
+        }
+
+        info() {
+            console.log(`Ім'я принца: ${this.name}`);
+            console.log(`Вік принца: ${this.age}`);
+            console.log(`Туфелька, яку він знайшов: ${this.shoe}`);
+            if (this.princeCinderella) {
+                console.log(this.princeCinderella);
+            }
+        }
+    }
+
+
+    const cinderellasArray = [];
+    for (let i = 1; i < 11; i++) {
+        cinderellasArray.push(new Cinderella(`Cinderella ${i}`, 20 + i, 32 + i))
+    }
+
+    const princeNazar = new Prince('Nazar', 22, 38);
+
+    let princeCinderella = 'Cinderella not found';
+    for (const cinderella of cinderellasArray) {
+        if (cinderella.footSize === princeNazar.shoe) princeCinderella = cinderella;
+    }
+    console.log(princeCinderella);
+
+
+    const princeCinderella2 = princeNazar.findCinderella(cinderellasArray);
+    console.log(princeCinderella2);
+
+    princeNazar.info();
+
+</script>
+<body>
+
+</body>
+</html>

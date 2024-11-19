@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    function Car(manufacturer, model, year, maxSpeed, engineVolume) {
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engineVolume = engineVolume;
+
+        this.drive = function () {
+            console.log(`Їдемо зі швидкістю ${this.maxSpeed} км/год)`);
+        }
+
+        this.info = function () {
+            console.log(`Виробник - ${this.manufacturer}`);
+            console.log(`Модель - ${this.model}`);
+            console.log(`Рік випуску - ${this.year}`);
+            console.log(`Максимальна швидкість - ${this.maxSpeed} км/год`);
+            console.log(`Об'єм двигуна - ${this.engineVolume} л`);
+            if (this.driver) {
+                console.log(this.driver)
+                // let driverInfo = 'Driver: ';  // щоб читабельно вивести інформацію через info
+                // for (const driver in this.driver) {
+                //     driverInfo += `${driver} - ${this.driver[driver]} `;
+                // }
+                // console.log(driverInfo);
+            }
+        };
+
+        this.increaseMaxSpeed = function (speedToAdd) {
+            this.maxSpeed += speedToAdd;
+        };
+        this.changeYear = function (newValue) {
+            this.year = newValue;
+        }
+        this.addDriver = function (driver) {
+            this.driver = driver;
+        };
+    }
+
+
+    const myCar = new Car('BMW', '530', 2020, 274, 3);
+
+    myCar.drive();
+    myCar.info();
+    myCar.increaseMaxSpeed(50);
+    myCar.changeYear(2024);
+    myCar.addDriver({name: 'Nazar', age: 22, driverLicense: 'temporary'});
+    myCar.info();
+
+
+</script>
+<body>
+
+
+</body>
+</html>

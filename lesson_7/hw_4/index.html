@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    class Client {
+        constructor(id, name, surname , email, phone, order) {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.phone = phone;
+            this.order = order;
+        }
+    }
+
+    // const clients = [];
+    //
+    // for (let i = 0; i < 10; i++) {
+    //
+    //     clients.push(new Client(
+    //         i,
+    //         `Name ${i}`,
+    //         `Surname ${i}`,
+    //         `Email ${i}`,
+    //         `068208986${i}`,
+    //         [`Product${i}`, `Product${i+1}`,  `Product${i+2}`]
+    //     ));
+    // }
+
+    let clients = [
+        new Client(17, 'Nazar','Natrobin','nazar@gmail.com', '+380633869696',  ['Laptop Dell XPS 13']),
+        new Client(1, 'Natalia', 'Jons', 'natalia@gmail.com', '+3806363636363',['Wireless Earbuds Sony WF-1000XM4']),
+        new Client(22, 'Gregor', 'Serentino', 'gregor@gmail.com', '+3806700700700',['Smartwatch Samsung Galaxy Watch 6','Laptop Dell XPS 13']),
+        new Client(13, 'Andrew', 'Hritsay', 'andrew@gmail.com', '+3806806806800',['Mechanical Keyboard Keychron K2','Wireless Earbuds Sony WF-1000XM4']),
+        new Client(2, 'Ira', 'Hrytsak', 'ira@gmail.com', '+3807575171717',['iPad Pro 11','Laptop Dell XPS 13']),
+        new Client(3, 'Vika', 'Prac', 'vika@gmail.com', '+3809300300300',['4K Monitor LG UltraFine']),
+        new Client(9, 'Roha', 'Valko', 'roha@gmail.com', '+380977777007',['Gaming Mouse Logitech G502','Laptop Dell XPS 13','Wireless Earbuds Sony WF-1000XM4']),
+        new Client(7, 'Alex', 'Ponomar', 'alex@gmail.com', '+3809512345678',['Portable Charger Anker 20,000mAh','iPad Pro 11']),
+        new Client(10, 'Petro', 'Ivanchenko', 'petro@gmail.com', '+3809898765432',['Laptop Dell XPS 13']),
+        new Client(11, 'Ivan', 'Petrenko', 'ivan@gmail.com', '+3806717171717',['wireless Earbuds Sony WF-1000XM4','4G Wireless Earbuds Sony WF-1000XM4']),
+    ];
+
+    console.log(clients);
+
+</script>
+<body>
+
+</body>
+</html>
