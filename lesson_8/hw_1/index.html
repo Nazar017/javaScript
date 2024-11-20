@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+
+    function cloneObject(obj) {
+        if (obj) {
+            let newObj = JSON.parse(JSON.stringify(obj));
+
+            for (const keyObj in obj) {
+                if (typeof obj[keyObj] === 'function') {
+                    newObj[keyObj] = obj[keyObj].bind(newObj);
+                }
+            }
+            return newObj;
+        }
+
+        throw new Error(`Object type is ${typeof obj}`)
+    }
+
+    const car = {
+        name: "BMW",
+        model: "X5",
+        color: "green",
+        speed: 50,
+        increaseMaxSpeed: function () {
+            this.speed += 20;
+        },
+        newCar: function (name,model,color) {
+            this.name = name;
+            this.model = model;
+            this.color = color;
+        }
+    }
+
+    const clone = cloneObject(car);
+    car.increaseMaxSpeed();
+    console.log(car);
+    console.log(clone);
+    clone.increaseMaxSpeed();
+    clone.increaseMaxSpeed();
+    console.log(clone);
+    clone.newCar('VW','Jetta MK6','Black')
+    console.log(clone)
+
+
+</script>
+<body>
+
+</body>
+</html>
