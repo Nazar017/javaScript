@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const ul = document.createElement('ul');  // створив контейнер для блоків з тз
+    ul.id = 'ul';
+    document.body.appendChild(ul);
+
+ let menues= ['Main','Products','About us','Contacts']
+ for (const menu of menues) {
+     let li = document.createElement('li')
+     ul.appendChild(li)
+     li.innerText = menu;
+ }
+
+
+</script>
+</body>
+</html>

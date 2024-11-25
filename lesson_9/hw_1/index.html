@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const main = document.createElement('div');  // створив контейнер для блоків з тз
+    main.id = 'main';
+    document.body.appendChild(main);
+
+    const className = ["wrap", "collapse", "alpha", "beta"];
+    const backgroundColor = ["#f00", "#0f0", "#00f", "#921bcd"];
+    for (let i = 0; i < className.length; i++) {
+        const oneClass = className[i];
+
+        let div = document.createElement('div');
+        div.setAttribute('style', `width: 100px; height: 100px; background-color: ${backgroundColor[i]}; margin: 10px;`)
+        main.appendChild(div);
+
+        div.className = oneClass;
+    }
+
+    const main2 = main.cloneNode(true);
+    document.body.appendChild(main2);
+
+</script>
+
+</body>
+</html>
