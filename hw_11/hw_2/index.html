@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    fetch('https://dummyjson.com/recipes')
+        .then(response => response.json())
+        .then(json => {
+            const {recipes} = json;
+
+            for (let i = 0; i < recipes.length; i++) {
+                const ingredients = recipes[i].ingredients;
+                document.write(`id: ${recipes[i].id}, name: ${recipes[i].name}, ingredients: `);
+
+                document.write(`<ul>`)
+                for (let j = 0; j < ingredients.length; j++) {
+                    document.write(`<li>${ingredients[j]}</li>`)
+
+                }
+                document.write(`</ul>`)
+
+            }
+        })
+
+</script>
+<body>
+
+</body>
+</html>
