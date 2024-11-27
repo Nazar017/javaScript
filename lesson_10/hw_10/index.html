@@ -21,18 +21,14 @@
 
     function elementOnPage(skip, limit) {
         const newArr = [];
-        for (let i = skip; i < limit; i++) {
-            newArr.push(array[i]);
-            if (i === 9) {
-                break;
-            }
-        }
+        for (let i = skip; i < limit; i++) newArr.push(array[i]);
 
         return `<pre>${JSON.stringify(newArr, null, 2)}</pre>`;
     }
 
     const divElement = document.createElement('div');
     document.body.appendChild(divElement);
+
     let skip = 0;
     let limit = 10
 
