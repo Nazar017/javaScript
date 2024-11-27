@@ -10,24 +10,28 @@
 
 <script>
 
-const lastUpdate = localStorage.getItem('lastUpdate');
-let amount = localStorage.getItem('amount');
+    let amount = localStorage.getItem('amount');
 
-if (!amount) {
-    amount = 100;
-} else {
-    amount = parseInt(amount);
-}
+    if (!amount) {
+        amount = 100;
+    } else {
+        amount = parseInt(amount);
+    }
 
-const now = Date.now();
 
-if (!lastUpdate || now - parseInt(lastUpdate) > 10000) {
-    amount += 10;
-    localStorage.setItem('amount', amount);
-    localStorage.setItem('lastUpdate', JSON.stringify(now));
-}
+    const lastUpdate = localStorage.getItem('lastUpdate');
+    if (lastUpdate) {
+        localStorage.setItem('lastUpdate', JSON.stringify(Date.now()));
+    }
 
-document.getElementById('counter').textContent = `${amount} грн`;
+    if (Date.now() - lastUpdate > 10000){
+        amount += 10;
+
+        localStorage.setItem('lastUpdate', JSON.stringify(Date.now()));
+        localStorage.setItem('amount', amount);
+    }
+    document.getElementById('counter').textContent = `${amount} грн`;
+
 
 </script>
 
