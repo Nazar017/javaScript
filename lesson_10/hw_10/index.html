@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const prevButton = document.createElement('button');
+    prevButton.innerText = 'Prev';
+    document.body.appendChild(prevButton);
+
+    const nextButton = document.createElement('button');
+    nextButton.innerText = 'Next';
+    document.body.appendChild(nextButton);
+
+    const array = Array.from({length: 100}, (_, index) => ({
+        id: index + 1,
+        value: `Value ${index + 1}`
+    }));
+
+    function elementOnPage(skip, limit) {
+        const newArr = [];
+        for (let i = skip; i < limit; i++) {
+            newArr.push(array[i]);
+            if (i === 9) {
+                break;
+            }
+        }
+
+        return `<pre>${JSON.stringify(newArr, null, 2)}</pre>`;
+    }
+
+    const divElement = document.createElement('div');
+    document.body.appendChild(divElement);
+    let skip = 0;
+    let limit = 10
+
+    const pageInfo = elementOnPage(skip, limit)
+
+    divElement.innerHTML = pageInfo;
+
+    nextButton.onclick = () => {
+        if (skip === 90) return;
+        skip += 10;
+        limit += 10;
+
+        divElement.innerHTML = elementOnPage(skip, limit);
+    }
+
+    prevButton.onclick = () => {
+        if (skip === 0) return;
+        skip -= 10;
+        limit -= 10;
+
+        divElement.innerHTML = elementOnPage(skip, limit);
+    }
+
+
+</script>
+
+</body>
+</html>

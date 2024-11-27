@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const inputElement = document.createElement('input');
+    inputElement.setAttribute('placeholder', `Enter num of kg`);
+
+    const divElement = document.createElement('div');
+    divElement.innerHTML = '0';
+
+    document.body.append(inputElement, divElement);
+
+
+    inputElement.addEventListener('input', event => {
+        if (parseInt(event.target.value).toString() === 'NaN') throw new Error('Invalid type of number kg or input is empty');
+
+        const calculatedValue = event.target.value * 2.2;
+
+        divElement.innerHTML = `${event.target.value}kg = ${JSON.stringify(calculatedValue)} lb`;
+    })
+    // inputElement.oninput = function (ev) {
+    //     if (parseInt(ev.target.value).toString() === 'NaN') throw new Error('Invalid type of number kg or input is empty');
+    //
+    //         const calculatedValue = ev.target.value * 2.2;
+    //
+    //         divElement.innerHTML = `<pre>${JSON.stringify(calculatedValue, null, 2)}</pre> `;
+    // }
+
+
+</script>
+
+</body>
+</html>

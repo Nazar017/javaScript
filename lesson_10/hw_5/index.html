@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function getDate() {
+        return `${new Date().getDate()}.${new Date().getMonth()}.${new Date().getFullYear()}`;
+    }
+
+    function getTime() {
+        const hour = new Date().getHours() < 10 ? `0${new Date().getHours()}` : new Date().getHours();
+        const minutes = new Date().getMinutes() < 10 ? `0${new Date().getMinutes()}` : new Date().getMinutes();
+        const seconds = new Date().getSeconds() < 10 ? `0${new Date().getSeconds()}` : new Date().getSeconds();
+        return `${hour}:${minutes}:${seconds}`;
+    }
+   let sessionsList = [];
+
+   if (localStorage.getItem('sessionsList')) {
+       sessionsList = JSON.parse(localStorage.getItem('sessionsList'))
+   }
+
+   sessionsList.push({
+       date: getDate(),
+       time: getTime()
+   });
+
+   localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
+
+</script>
+
+</body>
+</html>

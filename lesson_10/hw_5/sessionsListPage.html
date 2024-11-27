@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const divElement = document.createElement('div');
+    document.body.appendChild(divElement);
+
+    const userData = JSON.parse(localStorage.getItem('sessionsList'))
+
+    divElement.innerHTML = `<pre>${JSON.stringify(userData, null, 2)}</pre>`;
+</script>
+
+</body>
+</html>

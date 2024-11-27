@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="counter">100 грн</div>
+
+<script>
+
+const lastUpdate = localStorage.getItem('lastUpdate');
+let amount = localStorage.getItem('amount');
+
+if (!amount) {
+    amount = 100;
+} else {
+    amount = parseInt(amount);
+}
+
+const now = Date.now();
+
+if (!lastUpdate || now - parseInt(lastUpdate) > 10000) {
+    amount += 10;
+    localStorage.setItem('amount', amount);
+    localStorage.setItem('lastUpdate', JSON.stringify(now));
+}
+
+document.getElementById('counter').textContent = `${amount} грн`;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function addToLocalStorage(arrayName, objToAdd) {
+        const array = JSON.parse(localStorage.getItem(arrayName));
+        if (!array) {
+            localStorage.setItem(arrayName, JSON.stringify([objToAdd]));
+            return;
+        }
+        array.push(objToAdd);
+        localStorage.setItem(arrayName, JSON.stringify(array));
+    }
+
+
+    addToLocalStorage('cars', {model:'vw'})
+
+</script>
+
+</body>
+</html>

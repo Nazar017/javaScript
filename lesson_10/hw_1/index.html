@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let count = 1;
+    const divElement = document.createElement('div');
+    divElement.setAttribute('id', 'text')
+    divElement.setAttribute('style', `width: 100px; height: 100px; background-color: red; margin: 10px;`)
+
+
+    const buttonElement = document.createElement('button');
+    buttonElement.innerText = 'Click me!';
+
+    document.body.append(divElement, buttonElement);
+
+
+    buttonElement.onclick = () => {
+        const target = document.getElementById('text');
+        if(count%2!==0) {
+            target.setAttribute('style', 'display: none');
+        }else {
+            target.setAttribute('style', `width: 100px; height: 100px; background-color: red; margin: 10px;`);
+        }
+        count++;
+    }
+
+
+</script>
+
+</body>
+</html>

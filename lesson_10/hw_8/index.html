@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const rowsInput = document.createElement('input');
+    rowsInput.setAttribute('id', 'rows')
+    rowsInput.setAttribute('placeholder', 'Enter count rows');
+    rowsInput.setAttribute('style', `width: 200px; height: 15px; border-radius: 30px; margin: 10px;`)
+
+    const cellsInput = document.createElement('input');
+    cellsInput.setAttribute('id', 'cells')
+    cellsInput.setAttribute('placeholder', 'Enter cell count');
+    cellsInput.setAttribute('style', `width: 200px; height: 15px; border-radius: 30px; margin: 10px;`)
+
+    const inputElement = document.createElement('input');
+    inputElement.setAttribute('id', 'input3')
+    inputElement.setAttribute('placeholder', 'Enter cell values');
+    inputElement.setAttribute('style', `width: 200px; height: 15px; border-radius: 30px; margin: 10px;`)
+
+
+    const buttonElement = document.createElement('button');
+    buttonElement.innerText = 'Click me!';
+    buttonElement.setAttribute('style', `width: 100; height: 30px; border-radius: 30px; background: black; color: white;`);
+
+
+    const tableElement = document.createElement('table');
+    tableElement.setAttribute('id', 'table')
+
+
+    document.body.append(rowsInput, cellsInput, inputElement, buttonElement, tableElement);
+
+    buttonElement.addEventListener('click', () => {
+        if (parseInt(rowsInput.value).toString() === 'NaN') throw new Error('Invalid type of rows count');
+        if (parseInt(cellsInput.value).toString() === 'NaN') throw new Error('Invalid cell count');
+
+        const rows = rowsInput.value;
+        const cells = cellsInput.value;
+        const value = inputElement.value;
+
+        for (let i = 0; i < rows; i++) {
+            const tr = document.createElement('tr');
+            tableElement.appendChild(tr);
+            for (let j = 0; j < cells; j++) {
+                const td = document.createElement('td');
+                td.setAttribute('style', `width: 200px; height: 15px; border: 1px solid black;`)
+                td.innerText = value;
+                tr.appendChild(td);
+            }
+
+        }
+
+    })
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let currentCount = localStorage.getItem('counter');
+
+    const divElement = document.createElement('div');
+    divElement.innerText = currentCount || 17;
+    divElement.setAttribute('id', 'counter')
+
+    document.body.appendChild(divElement);
+
+    let counter = document.getElementById('counter');
+    localStorage.setItem('counter', counter.innerText);
+
+
+    if (!currentCount) {
+        currentCount = 0;
+    } else {
+        currentCount = parseInt(currentCount);
+    }
+
+    currentCount++;
+
+    localStorage.setItem('counter', currentCount);
+
+    document.getElementById('counter').textContent = currentCount;
+
+
+</script>
+
+</body>
+</html>
