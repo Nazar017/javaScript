@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<body>
 <script>
 
-    fetch('https://dummyjson.com/recipes')
-        .then(response => response.json())
-        .then(json => {
-            const {recipes} = json;
+    function loadRecipes(limit, skip) {
+        const url = `https://dummyjson.com/recipes?limit=${limit}&skip=${skip}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(json => {
+                const {recipes} = json;
 
-            for (let i = 0; i < recipes.length; i++) {
-                const ingredients = recipes[i].ingredients;
-                document.write(`id: ${recipes[i].id}, name: ${recipes[i].name}, ingredients: `);
+                for (let i = 0; i < recipes.length; i++) {
+                    const ingredients = recipes[i].ingredients;
+                    document.write(`id: ${recipes[i].id}, name: ${recipes[i].name}, ingredients: `);
 
-                document.write(`<ul>`)
-                for (let j = 0; j < ingredients.length; j++) {
-                    document.write(`<li>${ingredients[j]}</li>`)
+                    document.write(`<ul>`)
+                    for (let j = 0; j < ingredients.length; j++) {
+                        document.write(`<li>${ingredients[j]}</li>`)
+
+                    }
+                    document.write(`</ul>`)
 
                 }
-                document.write(`</ul>`)
+            })
 
-            }
-        })
+    }
 
+    const limit =  +prompt('Enter a limit number');
+    const skip = +prompt('Enter a skip number');
+    loadRecipes(limit, skip);
 </script>
-<body>
 
 </body>
 </html>
